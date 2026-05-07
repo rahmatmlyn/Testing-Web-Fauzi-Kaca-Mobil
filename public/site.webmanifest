@@ -1,0 +1,25 @@
+{
+  "name": "Fauzi Kaca Mobil",
+  "short_name": "Fauzi Kaca",
+  "description": "Spesialis kaca mobil panggilan se-Jabodetabek. Bergaransi 1 tahun.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A1F44",
+  "theme_color": "#0A1F44",
+  "lang": "id-ID",
+  "icons": [
+    {
+      "src": "/assets/img/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/img/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

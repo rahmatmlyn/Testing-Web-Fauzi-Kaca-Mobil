@@ -1,0 +1,190 @@
+# ==============================================================================
+# .htaccess — Konfigurasi Apache untuk Fauzi Kaca Mobil
+# Hosting: Domainesia (Apache + cPanel Shared Hosting)
+# ==============================================================================
+
+# Default untuk pages tanpa extension
+DirectoryIndex index.html index.htm index.php
+
+# ==============================================================================
+# 1. CUSTOM ERROR PAGES
+# ==============================================================================
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 500 /404.html
+
+# ==============================================================================
+# 2. FORCE HTTPS (Aktifkan setelah SSL terpasang di Domainesia)
+# ==============================================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS — uncomment setelah SSL aktif di cPanel
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Force www atau non-www (pilih salah satu, sesuaikan preferensi)
+  # Opsi A: Force non-www (recommended for SEO):
+  # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Opsi B: Force www:
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ============================================================================
+  # 3. CLEAN URLS — hapus .html dari URL bar
+  # /about.html  →  /about
+  # ============================================================================
+
+  # Redirect /file.html → /file (browser address bar lebih bersih)
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L,NE]
+
+  # Internal rewrite /about → /about.html (server tetap serve file aslinya)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# ==============================================================================
+# 4. GZIP COMPRESSION (mengurangi ukuran transfer hingga 70%)
+# ==============================================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xml+rss
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE application/font-woff
+  AddOutputFilterByType DEFLATE application/font-woff2
+</IfModule>
+
+# ==============================================================================
+# 5. BROWSER CACHING (mempercepat repeat visit)
+# ==============================================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML — short cache, bisa ada update
+  ExpiresByType text/html "access plus 1 hour"
+
+  # CSS & JS — 1 bulan, gunakan versioning di nama file untuk cache busting
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-javascript "access plus 1 month"
+
+  # Images — 1 tahun
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts — 1 tahun
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# Alternative caching dengan Cache-Control header
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ==============================================================================
+# 6. SECURITY HEADERS
+# ==============================================================================
+<IfModule mod_headers.c>
+  # Cegah MIME-type sniffing
+  Header set X-Content-Type-Options "nosniff"
+
+  # Cegah clickjacking dengan iframe dari domain lain
+  Header set X-Frame-Options "SAMEORIGIN"
+
+  # Aktifkan XSS filtering browser (legacy support)
+  Header set X-XSS-Protection "1; mode=block"
+
+  # Kontrol referrer info
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions Policy — minim akses fitur sensitif
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # HSTS — uncomment setelah SSL & semua subdomain ready (HATI-HATI: irreversible)
+  # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+
+  # Hilangkan info versi server
+  Header unset Server
+  Header unset X-Powered-By
+</IfModule>
+
+# ==============================================================================
+# 7. PROTEKSI FILE SENSITIF
+# ==============================================================================
+
+# Sembunyikan file dotfiles (.git, .env, .htaccess sendiri, dll)
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Blokir akses ke file backup, log, config
+<FilesMatch "\.(bak|backup|old|orig|save|swp|tmp|log|conf|config|env|ini|sql|sh)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Blokir akses ke folder docs
+<IfModule mod_rewrite.c>
+  RewriteRule ^docs/.*$ - [F,L]
+</IfModule>
+
+# ==============================================================================
+# 8. KARAKTER ENCODING DEFAULT
+# ==============================================================================
+AddDefaultCharset UTF-8
+
+# ==============================================================================
+# 9. MIME TYPES (untuk file modern yang mungkin tidak dikenali server)
+# ==============================================================================
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+  AddType text/cache-manifest .appcache
+  AddType application/javascript .js .mjs
+  AddType application/json .json
+</IfModule>
+
+# ==============================================================================
+# 10. DISABLE DIRECTORY LISTING
+# ==============================================================================
+Options -Indexes
+
+# ==============================================================================
+# 11. FOLLOW SYMBOLIC LINKS (diperlukan untuk mod_rewrite)
+# ==============================================================================
+Options +FollowSymLinks

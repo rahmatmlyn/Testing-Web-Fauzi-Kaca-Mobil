@@ -1,0 +1,17 @@
+# robots.txt — Fauzi Kaca Mobil
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Block crawler dari folder/file yang tidak perlu diindeks
+Disallow: /docs/
+Disallow: /api/
+Disallow: /partials/
+Disallow: /assets/js/
+Disallow: /404.html
+Disallow: /thank-you.html
+Disallow: /*.json$
+
+# Sitemap
+Sitemap: https://fauzikacamobil.com/sitemap.xml

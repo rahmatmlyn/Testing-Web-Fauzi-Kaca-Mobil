@@ -1,0 +1,73 @@
+/**
+ * DATA TESTIMONI PELANGGAN
+ * Tambah testimoni baru cukup di sini — akan otomatis muncul di slider
+ */
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: 'Bapak Andika Pratama',
+    location: 'Cibubur, Jakarta Timur',
+    car: 'Toyota Innova 2019',
+    avatar: '/assets/img/testimonials/avatar-1.jpg',
+    rating: 5,
+    serviceType: 'Ganti Kaca Depan + Home Service',
+    quote: 'Kaca depan Innova saya pecah jam 8 malam. Chat WA jam 8.30, teknisi sampai jam 10 dan selesai jam 12. Mobil bisa langsung dipakai besoknya. Harga sesuai estimasi awal, tidak ada biaya tambahan aneh-aneh. Recommended!',
+    verified: true,
+  },
+  {
+    id: 2,
+    name: 'Ibu Sari Wulandari',
+    location: 'Kebayoran Baru, Jakarta Selatan',
+    car: 'Honda HR-V 2021',
+    avatar: '/assets/img/testimonials/avatar-2.jpg',
+    rating: 5,
+    serviceType: 'Ganti Kaca Original Asahi',
+    quote: 'Saya sebelumnya sempat ditipu bengkel pinggir jalan — kaca KW dijual sebagai original. Di Fauzi Kaca, mereka tunjukkan stiker hologram Asahi-nya langsung. Profesional, jujur, dan rapi pengerjaannya.',
+    verified: true,
+  },
+  {
+    id: 3,
+    name: 'Mas Reza Firmansyah',
+    location: 'Bekasi Barat',
+    car: 'Mitsubishi Xpander 2022',
+    avatar: '/assets/img/testimonials/avatar-3.jpg',
+    rating: 5,
+    serviceType: 'Home Service Ganti Kaca + Kaca Film',
+    quote: 'Kebetulan istri lagi hamil tua, gak mungkin saya tinggal lama-lama ke bengkel. Untung ada layanan home service Fauzi. Datang on-time, kerja rapi, kabin gak ada bocor sama sekali pas hujan deras.',
+    verified: true,
+  },
+  {
+    id: 4,
+    name: 'Mbak Diana Permata',
+    location: 'BSD, Tangerang Selatan',
+    car: 'Mazda CX-5 2020',
+    avatar: '/assets/img/testimonials/avatar-4.jpg',
+    rating: 5,
+    serviceType: 'Reparasi Kaca Retak (Resin Injection)',
+    quote: 'Awalnya saya kira retakan kecil di kaca depan harus ganti baru. Ternyata di Fauzi bisa direparasi dengan teknik resin — biayanya cuma 1/4 dari ganti baru, dan retakannya hampir tidak kelihatan setelah selesai.',
+    verified: true,
+  },
+  {
+    id: 5,
+    name: 'Bapak Hendra Wijaya',
+    location: 'Depok',
+    car: 'BMW X3 2018',
+    avatar: '/assets/img/testimonials/avatar-5.jpg',
+    rating: 5,
+    serviceType: 'Ganti Kaca Belakang + Klaim Asuransi',
+    quote: 'Mobil BMW saya kaca belakangnya dipecah maling. Fauzi Kaca bantu prosesnya dari A-Z termasuk dokumen klaim asuransi. Kaca pengganti benar-benar OEM standard, terlihat sama persis dengan kaca original pabrik.',
+    verified: true,
+  },
+  {
+    id: 6,
+    name: 'Ibu Ratna Dewi',
+    location: 'Cikarang, Bekasi',
+    car: 'Suzuki Ertiga 2021',
+    avatar: '/assets/img/testimonials/avatar-6.jpg',
+    rating: 5,
+    serviceType: 'Poles Jamur Kaca',
+    quote: 'Kaca samping mobil saya penuh jamur dari musim hujan tahun lalu. Sudah pasrah pikir harus ganti. Eh, di Fauzi bisa dipoles sampai bening lagi. Hasilnya luar biasa, hemat banget!',
+    verified: true,
+  },
+];

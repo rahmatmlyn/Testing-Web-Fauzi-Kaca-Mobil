@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A1F44">
+  <title>404 — Halaman Tidak Ditemukan | Fauzi Kaca Mobil</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse 80% 60% at 75% 15%, rgba(255,107,26,0.18), transparent 55%),
+        radial-gradient(ellipse 60% 80% at 15% 85%, rgba(26,56,112,0.6), transparent 60%),
+        linear-gradient(135deg, #0A1F44 0%, #0F2A5C 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 600px; }
+    .err-code {
+      font-size: clamp(80px, 15vw, 180px);
+      font-weight: 800;
+      line-height: 1;
+      color: #FF6B1A;
+      margin: 0 0 1rem;
+    }
+    h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 800; margin: 0 0 1rem; }
+    p { font-size: 1.1rem; opacity: 0.8; margin: 0 0 2rem; line-height: 1.6; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: #FF6B1A; color: white; box-shadow: 0 10px 25px rgba(255,107,26,0.4); }
+    .btn-primary:hover { background: #E85D0E; transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.15); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="err-code">404</div>
+    <h1>Halaman Tidak Ditemukan</h1>
+    <p>Sepertinya Anda mengetuk pintu yang salah. Tapi tenang — kaca mobil Anda masih bisa kami bantu!</p>
+    <div class="actions">
+      <a href="/" class="btn btn-primary">🏠 Kembali ke Beranda</a>
+      <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="btn btn-ghost">💬 Chat WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>

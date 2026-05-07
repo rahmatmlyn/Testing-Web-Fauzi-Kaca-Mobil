@@ -1,0 +1,44 @@
+name: 🔍 CI — Lint & Build Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: ['*', '!main']      # Run di semua branch kecuali main
+
+jobs:
+  ci:
+    name: ✅ Quality Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: 🔧 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: 🎨 Format check (Prettier)
+        run: npm run format:check
+        continue-on-error: true       # warning saja, tidak blocking
+
+      - name: 🔍 Lint (ESLint)
+        run: npm run lint
+        continue-on-error: true
+
+      - name: 🏗️  Build test
+        run: npm run build
+
+      - name: 📊 Build report
+        run: |
+          echo "### ✅ Build sukses!" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          du -sh dist/ >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY

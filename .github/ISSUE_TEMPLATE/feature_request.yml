@@ -1,0 +1,26 @@
+name: ✨ Feature Request
+description: Usulkan fitur atau perbaikan baru
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Deskripsi Fitur
+      placeholder: Saya ingin website memiliki fitur ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivasi / Use Case
+      description: Kenapa fitur ini penting?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatif yang Sudah Dipertimbangkan
+      placeholder: (opsional) Apakah ada solusi lain yang dipertimbangkan?

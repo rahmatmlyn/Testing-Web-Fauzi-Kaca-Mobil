@@ -1,0 +1,55 @@
+name: 🐛 Bug Report
+description: Laporkan bug atau masalah yang ditemukan di website
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Deskripsi Bug
+      description: Jelaskan bug yang Anda alami dengan jelas
+      placeholder: Saat saya klik tombol X, terjadi Y...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Langkah Mereproduksi
+      placeholder: |
+        1. Buka halaman /services
+        2. Klik tombol "Chat WhatsApp"
+        3. Lihat error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Hasil yang Diharapkan
+      placeholder: Seharusnya tombol membuka WhatsApp ke nomor yang benar
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Mobile (iOS Safari)
+        - Mobile (Android Chrome)
+        - Lainnya
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL Halaman
+      placeholder: https://fauzikacamobil.com/services
+    validations:
+      required: false

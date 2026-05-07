@@ -1,0 +1,42 @@
+{
+  "name": "fauzi-kaca-mobil-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Website company profile multi-page untuk Fauzi Kaca Mobil — bengkel spesialis kaca mobil di Jabodetabek. Built with Vite + Tailwind CSS.",
+  "author": "Fauzi Kaca Mobil",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:host": "vite preview --host",
+    "clean": "rimraf dist",
+    "format": "prettier --write \"**/*.{js,html,css,md,json}\"",
+    "format:check": "prettier --check \"**/*.{js,html,css,md,json}\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "deploy:zip": "npm run build && cd dist && zip -r ../fauzi-kaca-mobil-build.zip . && cd ..",
+    "size": "du -sh dist 2>/dev/null || echo 'Run npm run build first'"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8.57.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.1.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

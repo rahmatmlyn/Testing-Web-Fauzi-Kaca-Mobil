@@ -1,0 +1,97 @@
+name: 🚀 Deploy to Domainesia
+
+# Trigger workflow saat push ke main, atau manual via GitHub UI
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.md'
+      - '.gitignore'
+      - '.vscode/**'
+  workflow_dispatch:    # Manual trigger button di GitHub Actions tab
+
+# Cancel running deploys saat ada push baru
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: 🔨 Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # 1. Checkout code dari GitHub
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      # 3. Install dependencies
+      - name: 🔧 Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      # 4. Build production
+      - name: 🏗️  Build production bundle
+        run: npm run build
+        env:
+          NODE_ENV: production
+          VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
+          VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+
+      # 5. Tampilkan hasil build
+      - name: 📊 Show build size
+        run: |
+          echo "### Build size summary" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          du -sh dist/ >> $GITHUB_STEP_SUMMARY
+          ls -lah dist/ >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+
+      # 6. Upload artifact (untuk debugging — bisa download dari Actions tab)
+      - name: 💾 Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-${{ github.sha }}
+          path: dist/
+          retention-days: 7
+
+      # 7. Deploy ke Domainesia via FTP
+      - name: 🚀 Deploy to Domainesia (FTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.FTP_REMOTE_PATH || '/public_html/' }}
+          # Lindungi file di server yang tidak boleh di-overwrite
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+
+      # 8. Notifikasi sukses
+      - name: ✅ Deploy successful
+        if: success()
+        run: |
+          echo "## 🎉 Deployment berhasil!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Website sudah live di: **${{ secrets.VITE_SITE_URL || 'https://fauzikacamobil.com' }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Commit: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+
+      - name: ❌ Deploy failed
+        if: failure()
+        run: |
+          echo "## 💥 Deployment gagal" >> $GITHUB_STEP_SUMMARY
+          echo "Cek log step sebelumnya untuk detail error." >> $GITHUB_STEP_SUMMARY
+          echo "Tip: pastikan FTP credentials di GitHub Secrets sudah benar." >> $GITHUB_STEP_SUMMARY
