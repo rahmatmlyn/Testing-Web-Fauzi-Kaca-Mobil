@@ -15,9 +15,9 @@ export const SITE_CONFIG = {
 
   // Contact Info — Ganti dengan data asli sebelum deploy
   contact: {
-    phone: '+62 812-3456-7890',
-    phoneRaw: '+6281234567890',          // untuk href="tel:"
-    whatsapp: '6281234567890',           // tanpa + atau spasi
+    phone: '+62 821-2338-0339',
+    phoneRaw: '+6282123380339',          // untuk href="tel:"
+    whatsapp: '6282123380339',           // tanpa + atau spasi
     whatsappMessage: 'Halo Fauzi Kaca Mobil, saya ingin bertanya tentang layanan kaca mobil...',
     email: 'info@fauzikacamobil.com',
     address: {
