@@ -125,10 +125,10 @@ export const SERVICES = [
 export const HOME_SERVICE = {
   title: 'Home Service Jabodetabek',
   subtitle: 'Tidak perlu ke bengkel — kami yang datang ke lokasi Anda',
-  description: 'Layanan eksklusif untuk Jabodetabek. Tim teknisi kami akan datang ke rumah, kantor, atau lokasi mogok Anda dengan kaca + peralatan lengkap. Cocok untuk Anda yang sibuk atau sedang dalam kondisi darurat.',
+  description: 'Layanan eksklusif untuk Jabodetabek. Tim teknisi kami akan datang ke rumah, kantor, atau Garasi anda dengan kaca + peralatan lengkap. Cocok untuk Anda yang sibuk atau sedang dalam kondisi darurat.',
   benefits: [
     { icon: '⚡', title: 'Respon Cepat', desc: 'Teknisi tiba dalam 1–3 jam dari konfirmasi' },
-    { icon: '🏠', title: 'Lokasi Fleksibel', desc: 'Rumah, kantor, parkiran mall, atau lokasi mogok' },
+    { icon: '🏠', title: 'Lokasi Fleksibel', desc: 'Rumah, kantor, parkiran mall, atau Garasi anda' },
     { icon: '💰', title: 'Tanpa Biaya Tersembunyi', desc: 'Estimasi transparan sebelum berangkat' },
     { icon: '🛡️', title: 'Sama Bergaransi', desc: 'Garansi anti-bocor 1 tahun penuh' },
   ],
