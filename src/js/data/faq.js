@@ -13,7 +13,7 @@ export const FAQ_DATA = [
       },
       {
         question: 'Kaca yang dipakai original atau aftermarket?',
-        answer: 'Standar kami adalah <strong>kaca original bersertifikat</strong> dari brand resmi (Asahi, Mulia, KMK, Xinyi). Kami tunjukkan stiker hologram & sertifikat sebelum pemasangan. Jika Anda ingin opsi aftermarket dengan harga lebih ekonomis, kami juga sediakan dengan disclosure penuh tentang kualitasnya.',
+        answer: 'Standar kami adalah <strong>kaca original bersertifikat SNI</strong>. Jika Anda ingin opsi aftermarket dengan harga lebih ekonomis, kami juga sediakan dengan disclosure penuh tentang kualitasnya.',
       },
       {
         question: 'Apakah bisa untuk semua merek mobil?',
@@ -43,7 +43,7 @@ export const FAQ_DATA = [
     items: [
       {
         question: 'Berapa biaya tambahan untuk Home Service?',
-        answer: 'Untuk wilayah <strong>Jakarta GRATIS</strong>. Untuk Bogor, Depok, Tangerang, Bekasi ada ongkos teknisi mulai <strong>Rp 50.000–150.000</strong> tergantung jarak. Estimasi total selalu kami konfirmasi di awal sebelum berangkat.',
+        answer: 'Dalam radius <strong>5 km dari workshop kami</strong> (Jl. Raya Lapan, Pekayon, Jakarta Timur), biaya kunjungan teknisi <strong>GRATIS</strong>. Di luar radius tersebut, tarif dihitung berdasarkan jarak dengan estimasi <strong>Rp 100.000–250.000</strong>. Konfirmasi tarif pasti selalu kami berikan via WhatsApp sebelum teknisi berangkat.',
       },
       {
         question: 'Apa saja area yang tercover Home Service?',
@@ -64,15 +64,7 @@ export const FAQ_DATA = [
     items: [
       {
         question: 'Apa metode pembayaran yang diterima?',
-        answer: 'Tunai, transfer bank (BCA, Mandiri, BRI, BNI), QRIS (semua e-wallet), dan kartu debit/kredit di workshop. Untuk home service, pembayaran dilakukan setelah pekerjaan selesai dan Anda puas dengan hasilnya.',
-      },
-      {
-        question: 'Apakah bisa klaim asuransi mobil?',
-        answer: 'Bisa. Kami menyediakan kuitansi resmi, faktur kaca original, dan dokumen pendukung untuk klaim. Beberapa pelanggan kami bahkan rutin pakai kami sebagai bengkel rekanan asuransi mereka.',
-      },
-      {
-        question: 'Apakah ada cicilan atau pembayaran bertahap?',
-        answer: 'Ya, untuk pengerjaan di atas Rp 3.000.000 kami menawarkan opsi cicilan 0% via kartu kredit (hingga 6 bulan dengan bank tertentu) atau cicilan via Kredivo/Akulaku. Tanyakan ke tim kami untuk detail.',
+        answer: 'Tunai, transfer bank (BCA, Mandiri, BRI, BNI), QRIS (semua e-wallet), dan kartu debit/kredit hannya workshop. Untuk home service, pembayaran dilakukan setelah pekerjaan selesai dan Anda puas dengan hasilnya.',
       },
     ],
   },

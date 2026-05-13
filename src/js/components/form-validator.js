@@ -23,6 +23,7 @@ export function initContactForm() {
       nama: formData.get('nama')?.trim() || '',
       whatsapp: formData.get('whatsapp')?.trim() || '',
       mobil: formData.get('mobil')?.trim() || '',
+      tahun_mobil: formData.get('tahun_mobil')?.trim() || '',
       lokasi: formData.get('lokasi')?.trim() || '',
       layanan: formData.get('layanan') || '',
       pesan: formData.get('pesan')?.trim() || '',
@@ -34,7 +35,7 @@ export function initContactForm() {
       errors.push({ field: 'nama', msg: 'Nama wajib diisi (min 2 karakter)' });
     }
     if (!data.whatsapp || !/^(\+62|62|0)8\d{8,12}$/.test(data.whatsapp.replace(/\s|-/g, ''))) {
-      errors.push({ field: 'whatsapp', msg: 'Nomor WhatsApp tidak valid (cth: 08123456789)' });
+      errors.push({ field: 'whatsapp', msg: 'Nomor WhatsApp tidak valid (cth: 082123380339)' });
     }
     if (!data.layanan) {
       errors.push({ field: 'layanan', msg: 'Pilih jenis layanan' });
@@ -62,6 +63,7 @@ export function initContactForm() {
 *Nama:* ${data.nama}
 *WhatsApp:* ${data.whatsapp}
 *Mobil:* ${data.mobil || '-'}
+*Tahun Mobil:* ${data.tahun_mobil || '-'}
 *Lokasi:* ${data.lokasi || '-'}
 *Layanan:* ${data.layanan}
 

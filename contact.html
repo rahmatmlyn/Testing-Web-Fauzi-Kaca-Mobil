@@ -7,6 +7,9 @@
   <title>Kontak — Hubungi Fauzi Kaca Mobil | WhatsApp, Telepon, Email</title>
   <meta name="description" content="Hubungi Fauzi Kaca Mobil via WhatsApp, telepon, atau email. Workshop di Jakarta Timur, melayani seluruh Jabodetabek.">
   <link rel="canonical" href="https://fauzikacamobil.com/contact.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,16 +80,22 @@
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label for="whatsapp" class="form-label">Nomor WhatsApp *</label>
-              <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="081234567890" required>
+              <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="082123380339" required>
             </div>
             <div>
-              <label for="mobil" class="form-label">Mobil (Merek/Tipe/Tahun)</label>
-              <input type="text" id="mobil" name="mobil" class="form-input" placeholder="Cth: Toyota Innova 2019">
+              <label for="mobil" class="form-label">Mobil (Merek/Tipe)</label>
+              <input type="text" id="mobil" name="mobil" class="form-input" placeholder="Cth: Toyota Innova">
             </div>
           </div>
-          <div>
-            <label for="lokasi" class="form-label">Lokasi Anda</label>
-            <input type="text" id="lokasi" name="lokasi" class="form-input" placeholder="Cth: Cibubur, Jakarta Timur">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="tahun_mobil" class="form-label">Tahun Mobil</label>
+              <input type="number" id="tahun_mobil" name="tahun_mobil" class="form-input" placeholder="Cth: 2019" min="1970" max="2026">
+            </div>
+            <div>
+              <label for="lokasi" class="form-label">Lokasi Anda</label>
+              <input type="text" id="lokasi" name="lokasi" class="form-input" placeholder="Cth: Cibubur, Jakarta Timur">
+            </div>
           </div>
           <div>
             <label for="layanan" class="form-label">Jenis Layanan *</label>
@@ -96,6 +105,7 @@
               <option value="Reparasi Kaca Retak">Reparasi Kaca Retak</option>
               <option value="Kaca Film">Kaca Film</option>
               <option value="Poles Jamur">Poles Jamur</option>
+              <option value="Antar Kaca Antar Kota/Pulau">Antar Kaca Antar Kota/Pulau</option>
               <option value="Konsultasi Lain">Konsultasi Lain</option>
             </select>
           </div>
@@ -122,7 +132,7 @@
               </div>
               <div>
                 <div class="font-semibold text-sm text-gray-500 uppercase tracking-wider mb-1">Alamat</div>
-                <div class="text-navy-900" data-brand="brand-address">Jl. Raya Bogor KM. 25, Jakarta Timur</div>
+                <div class="text-navy-900" data-brand="brand-address">Jl. Raya Lapan No.4, Pekayon, Ps. Rebo, Jakarta Timur 13710</div>
               </div>
             </li>
             <li class="flex items-start gap-3">
@@ -148,11 +158,19 @@
           </ul>
         </div>
 
-        <!-- Map Placeholder -->
-        <div class="bg-gray-200 rounded-2xl aspect-[4/3] overflow-hidden">
+        <!-- Map -->
+        <div class="relative rounded-2xl overflow-hidden bg-gray-200 aspect-[4/3]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0!2d106.88!3d-6.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0!2sFauzi+Kaca+Mobil!5e0!3m2!1sen!2sid!4v1700000000000"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Fauzi Kaca Mobil"></iframe>
+            src="https://maps.google.com/maps?q=-6.341414,106.862548&output=embed&z=19"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi Workshop Fauzi Kaca Mobil"></iframe>
+          <a
+            href="https://maps.google.com/?q=-6.341414,106.862548"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 bg-white hover:bg-gray-50 text-navy-900 text-xs font-semibold px-3 py-2 rounded-lg shadow-md border border-gray-200 transition">
+            <svg class="w-3.5 h-3.5 text-accent-500" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+            Buka di Google Maps
+          </a>
         </div>
       </div>
     </div>

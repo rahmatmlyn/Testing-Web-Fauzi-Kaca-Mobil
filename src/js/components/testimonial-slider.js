@@ -47,7 +47,7 @@ export function initTestimonialSlider() {
 
   const scrollAmount = () => {
     const card = track.querySelector('.testimonial-card');
-    if (!card) return 320;
+    if (!card) return 200; // fallback jika tidak ada card
     const gap = parseInt(getComputedStyle(track).gap || '16', 10);
     return card.offsetWidth + gap;
   };

@@ -7,6 +7,9 @@
   <title>Portfolio — Hasil Kerja Fauzi Kaca Mobil | Galeri Sebelum & Sesudah</title>
   <meta name="description" content="Galeri pengerjaan Fauzi Kaca Mobil — dokumentasi sebelum & sesudah pemasangan kaca, reparasi retak, kaca film, dan poles jamur dari berbagai merk mobil.">
   <link rel="canonical" href="https://fauzikacamobil.com/portfolio.html">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,12 +30,12 @@
   <!-- FILTER PILLS -->
   <div class="sticky top-16 md:top-20 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 lg:px-6 py-3 overflow-x-auto">
-      <div class="flex gap-2 whitespace-nowrap">
-        <button class="px-4 py-2 rounded-full bg-accent-500 text-white text-sm font-semibold transition">Semua</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Ganti Kaca</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Reparasi Retak</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Kaca Film</button>
-        <button class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Poles Jamur</button>
+      <div class="flex gap-2 whitespace-nowrap" data-portfolio-filters>
+        <button data-filter="all" class="px-4 py-2 rounded-full bg-accent-500 text-white text-sm font-semibold transition">Semua</button>
+        <button data-filter="ganti-kaca" class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Ganti Kaca</button>
+        <button data-filter="reparasi-retak" class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Reparasi Retak</button>
+        <button data-filter="kaca-film" class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Kaca Film</button>
+        <button data-filter="poles-jamur" class="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-semibold transition">Poles Jamur</button>
       </div>
     </div>
   </div>
@@ -43,7 +46,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
         <!-- Card 1 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal>
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-category="ganti-kaca">
           <div class="aspect-[4/3] bg-gradient-to-br from-navy-700 to-navy-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">🚗</div>
             <div class="absolute top-3 left-3 flex gap-1">
@@ -60,7 +63,7 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="100">
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="100" data-category="reparasi-retak">
           <div class="aspect-[4/3] bg-gradient-to-br from-emerald-700 to-emerald-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">🔧</div>
             <div class="absolute top-3 left-3 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">RESIN INJECTION</div>
@@ -74,7 +77,7 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="200">
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="200" data-category="kaca-film">
           <div class="aspect-[4/3] bg-gradient-to-br from-blue-700 to-blue-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">🎬</div>
             <div class="absolute top-3 left-3 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">V-KOOL VIP-40</div>
@@ -88,7 +91,7 @@
         </article>
 
         <!-- Card 4 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal>
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-category="poles-jamur">
           <div class="aspect-[4/3] bg-gradient-to-br from-purple-700 to-purple-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">✨</div>
             <div class="absolute bottom-3 right-3 bg-accent-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Poles Jamur</div>
@@ -101,7 +104,7 @@
         </article>
 
         <!-- Card 5 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="100">
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="100" data-category="ganti-kaca">
           <div class="aspect-[4/3] bg-gradient-to-br from-navy-700 to-navy-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">🚙</div>
             <div class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">PREMIUM</div>
@@ -115,7 +118,7 @@
         </article>
 
         <!-- Card 6 -->
-        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="200">
+        <article class="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl transition" data-reveal data-reveal-delay="200" data-category="ganti-kaca">
           <div class="aspect-[4/3] bg-gradient-to-br from-emerald-700 to-emerald-900 relative overflow-hidden">
             <div class="absolute inset-0 flex items-center justify-center text-7xl">🚐</div>
             <div class="absolute top-3 left-3 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-full">HOME SERVICE</div>

@@ -8,9 +8,9 @@ export const SITE_CONFIG = {
   // Brand Identity
   brand: {
     name: 'Fauzi Kaca Mobil',
-    tagline: 'Spesialis Kaca Mobil Sejak 2012',
+    tagline: 'Spesialis Kaca Mobil Sejak 2001',
     description: 'Spesialis ganti kaca mobil, reparasi retak & kaca film panggilan se-Jabodetabek.',
-    foundedYear: 2012,
+    foundedYear: 2001,
   },
 
   // Contact Info — Ganti dengan data asli sebelum deploy
@@ -21,15 +21,15 @@ export const SITE_CONFIG = {
     whatsappMessage: 'Halo Fauzi Kaca Mobil, saya ingin bertanya tentang layanan kaca mobil...',
     email: 'info@fauzikacamobil.com',
     address: {
-      street: 'Jl. Raya Bogor KM. 25 No. 99',
+      street: 'Jl. Raya Lapan No.4, RT.8/RW.1, Pekayon, Kec. Ps. Rebo',
       city: 'Jakarta Timur',
       province: 'DKI Jakarta',
-      postalCode: '13760',
+      postalCode: '13710',
       country: 'Indonesia',
     },
-    coordinates: { lat: -6.3000, lng: 106.8800 },
-    googleMapsUrl: 'https://maps.app.goo.gl/xxxxxxxxxxx',
-    googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.xxx',
+    coordinates: { lat: -6.341414, lng: 106.862548 },
+    googleMapsUrl: 'https://maps.google.com/?q=-6.341414,106.862548',
+    googleMapsEmbed: 'https://maps.google.com/maps?q=-6.341414,106.862548&output=embed&z=19',
   },
 
   // Operasional
@@ -60,10 +60,10 @@ export const SITE_CONFIG = {
 
   // Statistics (untuk hero & trust badge)
   stats: {
-    yearsExperience: 12,
-    carsServiced: 1247,
+    yearsExperience: 21,
+    carsServiced: 9121,
     googleRating: 4.9,
-    googleReviews: 320,
+    googleReviews: 250,
     warrantyMonths: 12,
   },
 
