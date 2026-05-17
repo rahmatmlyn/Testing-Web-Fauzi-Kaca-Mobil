@@ -15,7 +15,8 @@ import { renderFAQ, initFAQAccordion } from './components/faq-accordion.js';
 import { renderTestimonials, initTestimonialSlider } from './components/testimonial-slider.js';
 import { initScrollAnimations, initCounters } from './components/scroll-animations.js';
 import { initContactForm } from './components/form-validator.js';
-import { initPortfolioFilter } from './components/portfolio-filter.js';
+import { initAdminModal } from './components/admin-modal.js';
+import { initPortfolio } from './components/portfolio.js';
 import { SITE_CONFIG, getWhatsAppUrl } from './config.js';
 
 // Inject WhatsApp link ke semua tombol [data-wa-link]
@@ -23,6 +24,12 @@ function injectWhatsAppLinks() {
   document.querySelectorAll('[data-wa-link]').forEach((el) => {
     const customMsg = el.getAttribute('data-wa-message');
     el.setAttribute('href', getWhatsAppUrl(customMsg));
+  });
+
+  // Admin Bandung
+  document.querySelectorAll('[data-wa-bandung-link]').forEach((el) => {
+    const msg = el.getAttribute('data-wa-message') || SITE_CONFIG.contact.whatsappMessage;
+    el.setAttribute('href', `https://wa.me/${SITE_CONFIG.contact.whatsappBandung}?text=${encodeURIComponent(msg)}`);
   });
 }
 
@@ -75,7 +82,8 @@ onReady(async () => {
   initCounters();
 
   initContactForm();
-  initPortfolioFilter();
+  initPortfolio();
+  initAdminModal();
 
   // 5. Hilangkan loading state
   document.body.classList.add('is-loaded');

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "category": "ganti-kaca",
+    "car": "Toyota Innova 2019",
+    "title": "Ganti Kaca Depan Original Asahi",
+    "description": "Kaca depan pecah akibat batu di tol. Pengerjaan home service di Cibubur, selesai dalam 90 menit.",
+    "service_badge": "Ganti Kaca",
+    "top_badge": "",
+    "top_badge_color": "orange",
+    "image": "",
+    "color": "navy"
+  },
+  {
+    "id": "2",
+    "category": "reparasi-retak",
+    "car": "Mazda CX-5 2020",
+    "title": "Reparasi Retak Bullseye",
+    "description": "Retak akibat batu kerikil. Direparasi dengan resin injection, hampir tidak terlihat. Hemat 75% vs ganti baru.",
+    "service_badge": "Reparasi",
+    "top_badge": "RESIN INJECTION",
+    "top_badge_color": "green",
+    "image": "",
+    "color": "emerald"
+  },
+  {
+    "id": "3",
+    "category": "kaca-film",
+    "car": "Honda HR-V 2021",
+    "title": "Pasang V-Kool VIP-40 Full Body",
+    "description": "Tolak panas 80%, tolak UV 99%. Garansi resmi distributor 5 tahun. Pengerjaan 2,5 jam di workshop.",
+    "service_badge": "Kaca Film",
+    "top_badge": "V-KOOL VIP-40",
+    "top_badge_color": "blue",
+    "image": "",
+    "color": "blue"
+  },
+  {
+    "id": "4",
+    "category": "poles-jamur",
+    "car": "Suzuki Ertiga 2021",
+    "title": "Poles Jamur Kaca Samping",
+    "description": "Jamur tebal akibat musim hujan. Dipoles dengan compound khusus, kaca kembali bening seperti baru.",
+    "service_badge": "Poles Jamur",
+    "top_badge": "",
+    "top_badge_color": "orange",
+    "image": "",
+    "color": "purple"
+  },
+  {
+    "id": "5",
+    "category": "ganti-kaca",
+    "car": "BMW X3 2018",
+    "title": "Ganti Kaca Belakang OEM",
+    "description": "Kaca belakang dipecah maling. Pengerjaan + bantuan klaim asuransi. Kaca OEM standard pabrik.",
+    "service_badge": "Ganti Kaca",
+    "top_badge": "PREMIUM",
+    "top_badge_color": "orange",
+    "image": "",
+    "color": "navy"
+  },
+  {
+    "id": "6",
+    "category": "ganti-kaca",
+    "car": "Mitsubishi Xpander 2022",
+    "title": "Home Service di Bekasi Barat",
+    "description": "Pengerjaan di rumah pelanggan, kaca depan + kaca film tambahan. Tetap rapi & bergaransi.",
+    "service_badge": "Ganti Kaca",
+    "top_badge": "HOME SERVICE",
+    "top_badge_color": "orange",
+    "image": "",
+    "color": "emerald"
+  }
+]

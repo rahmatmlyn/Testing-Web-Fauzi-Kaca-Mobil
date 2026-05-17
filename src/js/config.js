@@ -18,6 +18,8 @@ export const SITE_CONFIG = {
     phone: '+62 821-2338-0339',
     phoneRaw: '+6282123380339',          // untuk href="tel:"
     whatsapp: '6282123380339',           // tanpa + atau spasi
+    whatsappBandung: '6282110088338',    // Admin Bandung
+    phoneBandung: '+62 821-1008-8338',
     whatsappMessage: 'Halo Fauzi Kaca Mobil, saya ingin bertanya tentang layanan kaca mobil...',
     email: 'info@fauzikacamobil.com',
     address: {
