@@ -137,22 +137,20 @@
       <p class="text-xs text-gray-500 mt-1">Masukkan password untuk melanjutkan</p>
     </div>
 
-    <div id="admin-modal-error" class="hidden bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-2.5 rounded-xl mb-4 flex items-center gap-2">
-      <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
-      <span></span>
-    </div>
+    <form action="/adminweb/index.php" method="POST" target="_blank" id="admin-modal-form">
+      <input
+        id="admin-modal-password"
+        type="password"
+        name="password"
+        placeholder="Password admin"
+        autocomplete="current-password"
+        class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-900">
 
-    <input
-      id="admin-modal-password"
-      type="password"
-      placeholder="Password admin"
-      autocomplete="current-password"
-      class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm mb-4 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent text-gray-900">
-
-    <button id="admin-modal-submit"
-      class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-sm transition">
-      Masuk ke Admin Panel
-    </button>
+      <button type="submit"
+        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-sm transition">
+        Masuk ke Admin Panel
+      </button>
+    </form>
     <button id="admin-modal-close"
       class="w-full mt-2 text-xs text-gray-400 hover:text-gray-600 py-2 transition">
       Batal
