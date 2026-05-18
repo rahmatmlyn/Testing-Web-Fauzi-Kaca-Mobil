@@ -61,7 +61,7 @@ if ($action === 'save') {
     ];
 
     if ($isNew) {
-        $items[] = $newItem;
+        array_unshift($items, $newItem);
     } else {
         $found = false;
         foreach ($items as &$item) {
