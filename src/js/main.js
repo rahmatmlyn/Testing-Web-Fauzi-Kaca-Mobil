@@ -16,7 +16,7 @@ import { renderTestimonials, initTestimonialSlider } from './components/testimon
 import { initScrollAnimations, initCounters } from './components/scroll-animations.js';
 import { initContactForm } from './components/form-validator.js';
 import { initAdminModal } from './components/admin-modal.js';
-import { initPortfolio } from './components/portfolio.js';
+import { initPortfolio, initHeroSlider } from './components/portfolio.js';
 import { SITE_CONFIG, getWhatsAppUrl } from './config.js';
 
 // Inject WhatsApp link ke semua tombol [data-wa-link]
@@ -83,6 +83,7 @@ onReady(async () => {
 
   initContactForm();
   initPortfolio();
+  initHeroSlider();
   initAdminModal();
 
   // 5. Hilangkan loading state
