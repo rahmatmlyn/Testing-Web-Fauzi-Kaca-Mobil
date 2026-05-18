@@ -88,7 +88,7 @@ export async function initPortfolio() {
       return;
     }
 
-    grid.innerHTML = data.map(buildCard).join('');
+    grid.innerHTML = [...data].reverse().map(buildCard).join('');
     initFilter(grid);
   } catch {
     grid.innerHTML = `<div class="col-span-full py-20 text-center text-gray-400">
