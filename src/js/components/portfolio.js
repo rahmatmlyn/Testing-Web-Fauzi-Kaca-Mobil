@@ -77,7 +77,7 @@ export async function initPortfolio() {
   if (!grid) return;
 
   try {
-    const res  = await fetch('/data/portfolio.json');
+    const res  = await fetch(`/data/portfolio.json?v=${Date.now()}`);
     const data = await res.json();
 
     if (!data.length) {
