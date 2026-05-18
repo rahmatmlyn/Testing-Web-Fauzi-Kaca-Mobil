@@ -65,6 +65,14 @@ ErrorDocument 500 /404.html
 # ==============================================================================
 # 5. BROWSER CACHING (mempercepat repeat visit)
 # ==============================================================================
+
+# JSON data — jangan di-cache agar update admin langsung tampil
+<FilesMatch "\.json$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</FilesMatch>
+
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
